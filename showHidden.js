@@ -1,0 +1,1 @@
+javascript:(function(d,ip,i,l,p){ip=d.getElementsByTagName('input');for(i=0,l=ip.length;i<l;i++){p=ip[i];if(p.type=='hidden'){if(p.outerHTML){p.outerHTML=p.name+p.outerHTML.replace(/type=["']?hidden["']?/i,'type="text"');}else{p.type='text';p.parentNode.insertBefore(d.createTextNode(p.name),p)}}}})(document);
