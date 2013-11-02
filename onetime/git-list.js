@@ -9,7 +9,7 @@ function gistCloneCommandList() {
 		success: function (data) {
 			var contents = $(data);
 			contents.find("div.gist.gist-item span.creator a[href^='/" + user + "/']").each(function () {
-				cloneCommand += "git clone " + this.href + " " + this.children[0].innerHTML + "\n";
+				cloneCommand += "git clone " + this.href.replace(user + "/", "") + ".git " + this.children[0].innerHTML + "\n";
 			});
 
 			if (contents.find("div.pagination span.disabled:contains('Older')").length > 0) {
